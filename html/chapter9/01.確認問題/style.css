@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #6c6b6b;
+}
+
+.position {
+	position: absolute;
+	right: 40px;
+	top: 100px;
+}
+
+i {
+	font-size: 32px;
+}

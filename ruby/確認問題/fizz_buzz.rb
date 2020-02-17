@@ -1,8 +1,19 @@
 def fizz_buzz(number)
 
+if number % 15 ==0
+	"fizz_buzz"
+elsif number % 3 ==0
+	"fizz"
+elsif number % 5 ==0
+	"buzz"
+
+else number.to_s
+
 end
 
-puts
+end
+
+puts "1以上の数字を入力してください"
 
 input = gets.to_i
 

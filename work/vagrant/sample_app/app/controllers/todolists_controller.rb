@@ -10,7 +10,12 @@ def create
 
 	redirect_to'/top'
 end
-private
+
+def index
+	@lists = List.all
+end
+
+privates
 
 def list_params
 	params.require(:list).permit(:title,:body)

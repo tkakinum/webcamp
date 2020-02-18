@@ -1,28 +1,33 @@
 class TodolistsController < ApplicationController
-  def new
-  	@list = List.new
-  end
+ 	def new
+  		@list = List.new
+ 	end
 
-def create
-	list = List.new(list_params)
+	def create
+		list = List.new(list_params)
 
-	list.save
+		list.save
 
-	redirect_to todolist_path(list.id)
-end
+		redirect_to todolist_path(list.id)
+	end
 
-def index
-	@lists = List.all
-end
+	def index
+		@lists = List.all
+	end
 
-def show
-	@list = List.find(params[:id])
-end
+	def show
+		@list = List.find(params[:id])
+	end
 
-private
+	def edit
+		@list = List.find(params[:id])
+	end
 
-def list_params
+	private
+
+	def list_params
 	params.require(:list).permit(:title,:body)
-end
+
+	end
 
 end

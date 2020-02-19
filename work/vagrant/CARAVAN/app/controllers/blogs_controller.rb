@@ -6,6 +6,10 @@ class BlogsController < ApplicationController
   end
 
   def new
+  	ablog = Blog.new
+  end
+
+  def create
   end
 
   def edit

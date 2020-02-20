@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style type="text/css">.turbolinks-progress-bar
+    {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #0076ff;
+      z-index: 9999;
+      transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+      transform: translate3d(0, 0, 0);
+    }
+    </style>
+
+    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload">
+    <script src="/assets/application-4e370d3723b6f204426a9414077d365ea07814cce5619ae24fb7e581988f19ed.js" data-turbolinks-track="reload"></script>
+    <title>WebCampBackendNew</title>
+    <meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="AIcF0iHfAQFFfJdt/nRFB9OJk3fz5q8TrmjGB2gm49OruqWCn2BLHJtZpz9YvSQNroLGEgpJ3QBiKRufNyj6rA==">
+  </head>
+
+  <body>
+    <h1>Editing Book</h1>
+
+    <form class="edit_book" id="edit_book_185448" action="/books/185448" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="RI5Mx6dmcvDe+usfQFdJ8jf6XrzxAWydb+W1h0mV3V7Qm/wqhWuetRUT2vtKts3B3kJ4bKWtKTTiI+2N0HOdDg==">
+
+      <div class="field">
+       <label for="book_title">Title</label>
+       <input class="book_title" type="text" value="リーダブルコード"  name="book[title]" id="book_title">
+      </div>
+
+      <div class="field">
+       <label for="book_body">Body</label>
+        <textarea class="book_body" name="book[body]" id="book_body">より良いコードを書くためのシンプルで実践的なテクニック</textarea>
+     </div>
+
+      <div class="actions">
+       <input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">
+      </div>
+    </form>
+
+    <a class="show_185448" href="/books/185448">Show</a> |
+    <a class="back" href="/books">Back</a>
+
+  </body>
+</html>

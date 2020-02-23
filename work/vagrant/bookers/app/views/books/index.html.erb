@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <head>
 	<meta charset=utf-8>
 	<link rel="" href="">
@@ -9,7 +8,7 @@
 	<h1>Books</h1>
 	<p>Title</p>
 	<p>Body</p>
-	<% @lists.each do |book| %>
+	<% @books.each do |book| %>
       	<span><%= book.title %></span>
       	<span><%= book.body %></span>
     <% end %>

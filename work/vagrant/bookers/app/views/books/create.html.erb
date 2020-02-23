@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+	<meta charset=utf-8>
+	<link rel="" href="">
+	<title>WebCampBackendNew</title>
+</head>
+
+<body>
+	<h1>New Book</h1>
+	<%= form_for(@book, url: '/books')do |f| %>
+	<h2>Title</h2>
+	<%= f.text_field :title %>
+	<h2>Body</h2>
+	<%= f.text_field :body %>
+	<%= f.submit 'Create Book' %>
+	<% end %>
+</body>

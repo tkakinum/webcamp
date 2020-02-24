@@ -1,20 +1,20 @@
 <body>
     <p id="notice"></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= book.title %>
-</p>
+	<p>
+	  <strong>Title:</strong>
+	  <%= @book.title %>
+	</p>
 
-<p>
-  <strong>Body:</strong>
-  <%= book.body %>
-</p>
+	<p>
+	  <strong>Body:</strong>
+	  <%= @book.body %>
+	</p>
 
-<a>
-	<%= link_to "Edit", edit_path(edit) %>
-</a>
+	<a>
+		<%= link_to "Edit", book_path(book) %>
+	</a>
 
-<a class="back" href="/books">Back</a>
+	<a class="back" href="/books">Back</a>
 
 </body>

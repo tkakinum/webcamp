@@ -1,15 +1,47 @@
-<head>
-	<meta charset=utf-8>
-	<link rel="" href="">
-	<title>WebCampBackendNew</title>
-</head>
-
 <body>
+	<p id="notice"></p>
+
 	<h1>Books</h1>
-	<p>Title</p>
-	<p>Body</p>
-	<% @books.each do |book| %>
-      	<span><%= book.title %></span>
-      	<span><%= book.body %></span>
-    <% end %>
+
+	<table>
+		<thead>
+  		<tr>
+	      <th>Title</th>
+	      <th>Body</th>
+	      <th colspan="3"></th>
+	    </tr>
+		</thead>
+
+  	<tbody>
+        <% @books.each do |book| %>
+        <tr>
+          <td>
+            <%= book.title %>
+          </td>
+          <td>
+            <%= book.body %>
+          </td>
+          <td>
+          	<%= link_to "Show", book_path(book) %>
+          </td>
+          <td>
+          	<%= link_to "Edit", book_path(book) %>
+          </td>
+          <td>
+          	<%= link_to "Destroy", book_path(book) %>
+          </td>
+        </tr>
+        <% end %>
+     </tbody>
+  </table>
+
+
+  <h2>New book</h2>
+  <%= form_for(@book) do |f| %>
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+    <h4>Body</h4>
+    <%= f.text_field :body %>
+    <%= f.submit 'Create Book' %>
+  <% end %>
 </body>

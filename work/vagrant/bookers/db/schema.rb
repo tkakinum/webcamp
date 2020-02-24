@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_02_22_081704) do
 
   create_table "books", force: :cascade do |t|
-    t.string "title:本のタイトル"
-    t.string "body:本の感想"
+    t.string "title"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,16 +1,19 @@
-<head>
-	<meta charset=utf-8>
-	<link rel="" href="">
-	<title>WebCampBackendNew</title>
-</head>
-
 <body>
-	<h1>New Book</h1>
-	<%= form_for(@book, url: '/books')do |f| %>
-	<h2>Title</h2>
-	<%= f.text_field :title %>
-	<h2>Body</h2>
-	<%= f.text_field :body %>
-	<%= f.submit 'Create Book' %>
-	<% end %>
+    <p id="notice">Book was successfully created.</p>
+
+	<p>
+	  <strong>Title:</strong>
+	  <%= book.title %>
+	</p>
+
+	<p>
+	  <strong>Body:</strong>
+	  <%= book.body %>
+	</p>
+
+	<a>
+		<%= link_to "Edit", edit_path(edit) %>
+	</a>
+
+<a class="back" href="/books">Back</a>
 </body>

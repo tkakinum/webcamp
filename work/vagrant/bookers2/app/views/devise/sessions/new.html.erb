@@ -1,0 +1,11 @@
+<h2>Log in</h2>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+     <%= devise_error_messages! %>
+         <div><%= f.label :Name %><br />
+             <%= f.text_field :username %></div>
+
+         <div><%= f.label :Password %><br />
+             <%= f.password_field :password %></div>
+
+         <div><%= f.submit "Log in" %></div>
+    <% end %>

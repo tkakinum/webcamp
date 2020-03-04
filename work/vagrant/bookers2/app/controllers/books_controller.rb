@@ -1,7 +1,11 @@
 class BooksController < ApplicationController
 
   def top
-    @book = Book.all
+    @books = Book.all
+  end
+
+  def about
+    @books = Book.all
   end
 
   def index

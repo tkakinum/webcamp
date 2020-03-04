@@ -9,12 +9,8 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-	before_action :configure_permitted_parameters, if: :devise_controller?
-
-	end
-
   protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
+	before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 

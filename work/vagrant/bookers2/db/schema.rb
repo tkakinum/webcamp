@@ -13,15 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_03_04_072517) do
 
   create_table "books", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "post_images", force: :cascade do |t|
-    t.text "shop_name"
-    t.string "image_id"
-    t.text "caption"
-    t.integer "user_id"
+    t.string "title"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,9 +27,9 @@ ActiveRecord::Schema.define(version: 2020_03_04_072517) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "introduction"
+    t.string "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_image_id"
     t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -11,6 +11,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
+    @user = User.new
   end
 
   def create
@@ -20,7 +21,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book.id)
     else
-      flash[:notice] = "can't be blank!"
+      flash[:notice] = "error! can't be blank or letter is 2-20!"
       render :index
     end
   end

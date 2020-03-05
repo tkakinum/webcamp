@@ -1,9 +1,4 @@
 <body>
-  <% if flash[:notice] %>
-    <div class="flash">
-     <%= flash[:notice] %>
-    </div>
-  <% end %>
 
   <h2>User info</h2>
 
@@ -19,28 +14,33 @@
 
   <p id="notice"></p>
 
-  <h2>Books</h2>
+  <h2>Users</h2>
 
   <table>
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Opinion</th>
+        <th>image</th>
+        <th>name</th>
         <th colspan="3"></th>
       </tr>
     </thead>
 
     <tbody>
-        <% @books.each do |book| %>
+        <% @users.each do |user| %>
         <tr>
           <td>
-            <%= book.title %>
+            <%= user.profile_image_id %>
           </td>
           <td>
-            <%= book.body %>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.introduction %>
+          </td>
+          <td>
+            <%= link_to "Show", book_path(user) %>
           </td>
         </tr>
         <% end %>
      </tbody>
   </table>
-</body>

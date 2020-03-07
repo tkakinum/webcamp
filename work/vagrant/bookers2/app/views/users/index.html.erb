@@ -1,39 +1,35 @@
 <body>
   <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>User info</h2>
-          <h2>New book</h2>
-          <%= form_for(@book) do |f| %>
-            <h4>Title</h4>
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>User info</h2>
+        <h2>New book</h2>
+            <%= form_for(@book) do |f| %>
+          <h4>Title</h4>
             <%= f.text_field :title %>
-            <h4>Opinion</h4>
+          <h4>Opinion</h4>
             <%= f.text_field :body %>
             <%= f.submit 'Create Book' %>
           <% end %>
 
           <p id="notice"></p>
+
       </div>
-    </div>
-  </div>
 
+      <div class="col-lg-8">
+      	<h2>Users</h2>
+      	<table>
+      		<thead>
+        		<tr>
+      	      <th>image</th>
+      	      <th>name</th>
+      	      <th colspan="3"></th>
+      	    </tr>
+      		</thead>
 
-<div class="col-lg-8">
-    <div class="row">
-    	<h2>Users</h2>
-
-    	<table>
-    		<thead>
-      		<tr>
-    	      <th>image</th>
-    	      <th>name</th>
-    	      <th colspan="3"></th>
-    	    </tr>
-    		</thead>
-
-      	<tbody>
+        	<tbody>
             <% @users.each do |user| %>
-            <tr>
+              <tr>
               <td>
                 <%= user.profile_image_id %>
               </td>
@@ -46,9 +42,11 @@
               <td>
                 <%= link_to "Show", book_path(user) %>
               </td>
-            </tr>
+              </tr>
             <% end %>
-         </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
+</body>

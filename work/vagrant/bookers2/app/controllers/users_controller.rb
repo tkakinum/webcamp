@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     if @user.save
-      flash[:notice] = "Book was successfully created."
+      flash[:notice] = "User was successfully created."
       redirect_to user_path(@user.id)
     else
       flash[:notice] = "error! can't be blank or letter is 1-50!"

@@ -4,7 +4,7 @@
     <%= csrf_meta_tags %>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookers</title>
@@ -17,43 +17,51 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <nav class="nav navbar-nav navbar-left">
-          <span>Bookers</span>
+          <h4>Bookers</h4>
         </nav>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li>
-                <span class="glyphicon glyphicon-home home" aria-hidden="true"></span>
-                <%= link_to 'Home', user_path(@user) %>
+                <%= link_to user_path(@user) do %>
+                  <span class="glyphicon glyphicon-home home" aria-hidden="true"> Home</span>
+                <% end %>
               </li>
               <li>
-                <span class="glyphicon glyphicon-user users" aria-hidden="true"></span>
-                  <%= link_to 'Users', users_path %>
+                <%= link_to users_path do %>
+                  <span class="glyphicon glyphicon-user users" aria-hidden="true"> Users</span>
+                <% end %>
               </li>
               <li>
-                <span class="glyphicon glyphicon-book books" aria-hidden="true"></span>
-                  <%= link_to 'Books', books_path %>
+                <%= link_to books_path do %>
+                  <span class="glyphicon glyphicon-book books" aria-hidden="true"> Books</span>
+                <% end %>
               </li>
               <li>
-                <span class="glyphicon glyphicon-log-out logout" aria-hidden="true"></span>
-                 <%= link_to "logout", destroy_user_session_path, method: :delete %>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <span class="glyphicon glyphicon-log-out logout" aria-hidden="true"> logout</span>
+                <% end %>
              </li>
             <% else %>
               <li>
-                <span class="glyphicon glyphicon-home home" aria-hidden="true"></span>
-                  <%= link_to "Home", root_path %>
+                <%= link_to root_path do %>
+                  <span class="glyphicon glyphicon-home home" aria-hidden="true"> Home</span>
+                <% end %>
               </li>
               <li>
-                <span class="glyphicon glyphicon-link about" aria-hidden="true"></span>
-                  <%= link_to "About", home_about_path %>
+                <%= link_to home_about_path do %>
+                  <span class="glyphicon glyphicon-link about" aria-hidden="true"> About</span>
+                <% end %>
               </li>
               <li>
-                <span class="glyphicon glyphicon-edit sign_up" aria-hidden="true"></span>
-                 <%= link_to "sign up", new_user_registration_path %>
+                <%= link_to new_user_registration_path do %>
+                  <span class="glyphicon glyphicon-edit sign_up" aria-hidden="true"> sign_up</span>
+              <% end %>
               </li>
               <li>
-                <span class="glyphicon glyphicon-log-in sign_in" aria-hidden="true"></span>
-                 <%= link_to "login", new_user_session_path %>
+                <%= link_to new_user_session_path do %>
+                  <span class="glyphicon glyphicon-log-in sign_in" aria-hidden="true"> login<login/span>
+                <% end %>
               </li>
             <% end %>
           </ul>
@@ -61,7 +69,9 @@
       </div>
     </header>
 
+  <div class="mt-80">
     <%= yield %>
+  </div>
 
     <footer>
       <div class="container">

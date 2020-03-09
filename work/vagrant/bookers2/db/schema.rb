@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_052533) do
+ActiveRecord::Schema.define(version: 2020_03_09_094944) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "post_images", force: :cascade do |t|
     t.text "user_name"
     t.string "image_id"
     t.text "caption"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

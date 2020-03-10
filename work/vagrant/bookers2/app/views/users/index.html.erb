@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4">
         <h2>User info</h2>
-        <img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" alt="No image">
+        <img class="attachment user profile_image fallback" src="/assets/no_image.jpg" alt="No image">
         <table class="table">
           <tbody>
             <tr></tr>
@@ -18,17 +18,10 @@
             </tbody>
         </table>
         <div class="row">
-        <% if @user.id == current_user.id %>
-        <div class="btn-toolbar" role="toolbar">
-          <div class="btn-group">
-            <button class="btn btn-default" aria-label="Justify" type="button">
-              <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-                <%= link_to "", edit_user_path(@user) %>
-            </button>
+          <div>
+            <%= link_to "", new_user_path(current_user.id),class: "col-xs-8 btn btn-default glyphicon glyphicon-wrench" %>
           </div>
         </div>
-        <% end %>
-      </div>
 
         <h2>New book</h2>
             <%= form_for(@book) do |f| %>
@@ -58,7 +51,7 @@
             <% @users.each do |user| %>
               <tr>
               <td>
-                <img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" alt="No image">
+                <img class="attachment user profile_image fallback" src="/assets/no_image.jpg" alt="No image" style: width: 100px; height: 100px;>
               </td>
               <td>
                 <%= user.name %>

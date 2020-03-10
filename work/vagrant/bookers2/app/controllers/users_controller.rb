@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user = current_user
     @books = Book.all
     @book = Book.new
   end
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     if @user.save
-      flash[:notice] = "User was successfully created."
+      flash[:notice] = "User was successfully updated."
       redirect_to user_path(@user.id)
     else
       flash[:notice] = "error! can't be blank or letter is 1-50!"

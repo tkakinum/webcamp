@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
-  end
-
   def index
     @users = User.all
     @books = Book.all
@@ -20,6 +16,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
     if @user.save
       flash[:notice] = "User was successfully created."
       redirect_to user_path(@user.id)
@@ -27,12 +28,6 @@ class UsersController < ApplicationController
       flash[:notice] = "error! can't be blank or letter is 1-50!"
       render :index
     end
-  end
-
-  def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
   end
 
   private

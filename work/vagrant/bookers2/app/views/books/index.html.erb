@@ -1,6 +1,15 @@
 <body>
   <div class="container">
     <div class="row">
+      <% if @book.errors.any? %>
+        <div class="alert alert-warning">
+          <ul>
+            <% @book.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <div class="col-lg-3">
         <% if flash[:notice] %>
           <div class="flash">
@@ -25,7 +34,7 @@
 
         <div class="row">
             <div>
-              <%= link_to "", new_user_path(current_user.id),class: "col-xs-8 btn btn-default glyphicon glyphicon-wrench" %>
+              <%= link_to "", edit_user_path(current_user.id),class: "col-xs-9 btn btn-default glyphicon glyphicon-wrench" %>
             </div>
         </div>
 

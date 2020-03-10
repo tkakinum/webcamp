@@ -27,7 +27,7 @@
 
           <div class="row">
             <div>
-              <%= link_to "", new_user_path(current_user.id),class: "col-xs-8 btn btn-default glyphicon glyphicon-wrench" %>
+              <%= link_to "", edit_user_path(current_user.id),class: "col-xs-9 btn btn-default glyphicon glyphicon-wrench" %>
             </div>
           </div>
 
@@ -45,7 +45,7 @@
       </div>
 
       <div class="col-lg-8">
-       <h2>Books detail</h2>
+       <h2>Book detail</h2>
          <table>
           <thead>
            <tr>
@@ -67,7 +67,7 @@
                 <%= book.body %>
               </td>
               <td>
-                  <%= link_to "Edit", edit_book_path(book) %>
+                  <%= link_to "Edit", edit_book_path(current_user.id) %>
               </td>
               <td>
                   <%= link_to "Destroy", book_path(book), method: :delete, data: { confirm: '本当に消しますか？'} %>

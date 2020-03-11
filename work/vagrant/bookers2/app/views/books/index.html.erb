@@ -33,9 +33,11 @@
             </table>
 
         <div class="row">
+            <% if @user.id == current_user.id %>
             <div>
-              <%= link_to "", edit_user_path(current_user.id),class: "col-xs-9 btn btn-default glyphicon glyphicon-wrench" %>
+              <p><%= link_to "", edit_user_path(current_user.id),class: "col-xs-9 btn btn-default glyphicon glyphicon-wrench" %></p>
             </div>
+            <% end %>
         </div>
 
           <h2>New book</h2>

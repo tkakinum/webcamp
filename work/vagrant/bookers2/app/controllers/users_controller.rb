@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :correct_user,   only: [:edit, :update]
 
   def index
     @users = User.all
@@ -25,11 +26,18 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       flash[:notice] = "error! can't be blank or letter is 1-50!"
-      render :index
+      render :edit
     end
   end
 
   private
+
+  def correct_user
+    user = User.find(params[:id])
+    if current_user != user
+      redirect_to root_path
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)

@@ -69,7 +69,7 @@
             <tr>
               <td>
                 <img class="attachment user profile_image fallback" src="/assets/no_image.jpg" alt="No image" style: width: 100px; height: 100px><br>
-                <%= link_to @user.name, user_path(@user) %>
+                <%= link_to @user.name, user_path(book.user) %>
               </td>
               <td>
                 <%= link_to book.title, book_path(book.id) %>

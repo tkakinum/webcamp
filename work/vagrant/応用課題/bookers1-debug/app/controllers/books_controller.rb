@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  def top
+  end
+
   def _form
     @book = Book.new
   end
@@ -28,6 +31,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to @book, notice: 'Book was successfully created.'
     else
+      flash[:notice] = "can't be blank!"
       redirect_to action: 'index'
     end
   end
@@ -35,7 +39,7 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
-    if @book.update()
+    if @book.update(book_params)
       redirect_to @book, notice: 'Book was successfully updated.'
     else
       render :edit

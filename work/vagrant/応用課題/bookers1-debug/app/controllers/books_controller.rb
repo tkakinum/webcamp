@@ -1,6 +1,10 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  def _form
+    @book = Book.new
+  end
+
   # GET /books
   # GET /books.json
   def index
@@ -24,7 +28,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to @book, notice: 'Book was successfully created.'
     else
-      render :index
+      redirect_to action: 'index'
     end
   end
 

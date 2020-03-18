@@ -30,6 +30,10 @@ class UsersController < ApplicationController
   	params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
+  def book_params
+    params.require(:book).permit(:title)
+  end
+
   #url直接防止　メソッドを自己定義してbefore_actionで発動。
    def baria_user
   	unless params[:id].to_i == current_user.id

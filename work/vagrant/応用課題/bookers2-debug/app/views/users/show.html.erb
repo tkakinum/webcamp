@@ -3,7 +3,7 @@
 <!--同コントローラーのviewで表示ならusersは省略可 -->
 
 <h2>New book</h2>
-<%= render 'books/newform', book: @book %>
+<%= render partial: 'books/newform', locals: { book: @book, title: @books } %>
 
 <h2>Books</h2>
 <!--books一覧 -->

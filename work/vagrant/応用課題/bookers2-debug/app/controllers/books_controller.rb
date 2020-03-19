@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 
   def show
     @mybook = Book.find(params[:id])
+    @book = Book.new
     @user = @mybook.user
   end
 
@@ -35,9 +36,9 @@ class BooksController < ApplicationController
   	end
   end
 
-  def delete
-  	@book = Book.find(params[:id])
-  	@book.destoy
+  def destroy
+  	book = Book.find(params[:id])
+  	book.destroy
   	redirect_to books_path, notice: "successfully delete book!"
   end
 
